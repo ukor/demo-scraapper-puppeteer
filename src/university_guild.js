@@ -52,7 +52,7 @@ function getUniversities() {
     const universities = await page.evaluate(getUniversities);
     // pagenation link structure =
     // https://www.thecompleteuniversityguide.co.uk/universities?pg=2
-    for (let pageNumber = 1; pageNumber < totalNumberOfPages; pageNumber++) {
+    for (let pageNumber = 2; pageNumber <= totalNumberOfPages; pageNumber++) {
       await page.goto(`${university_url}?pg=${pageNumber}`, {
         waitUntil: "networkidle0",
       });
